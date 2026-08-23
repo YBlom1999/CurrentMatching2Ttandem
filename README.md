@@ -17,5 +17,5 @@ To illustrate
 ![Optimization of bandgap energy](Figures/EgOptimization.png)
 
 
-# References
+## References
 [1] Y. Blom, W. Suprayogi, M. Ruben Vogt, O. Isabella, and R. Santbergen, *Comparison on Module Performance and Degradation Robustness of Two-, Three-, and Four-Terminal Perovskite Silicon Configurations Under Realistic Operating Conditions*, Progress in Photovoltaics: Research and Applications 34, **6** (2026): 653–666, https://doi.org/10.1002/pip.70066.
