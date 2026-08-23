@@ -10,7 +10,9 @@ This design requirement is often interpreted as the requirement that both cells 
 Various optical studies focus on the absorbed current in both subcells and aim to maximize the lowest value of absorbed current.
 And although this is a good general approach, it is important to realize that matching current absorptions is only an approximation of the actual design requirement: Matching the maximum power point current of both cells.
 
-To illustrate
+When both subcells have a sufficiently large fill factor (FF), the maximum power point current ($I_{mpp}$) is approximately the same as the photogenerated current ($I_{ph}$), and therefore, matching $J_{ph}$ is sufficient.
+However, when the FF of one subcell is low, this does not hold anymore.
+As shown in the figure below, when the shunt resistanace ($R_{shunt}$) decreases, the two subcells remain a similar value of $J_{ph}$ (as it is similar to the short-circuit current), but the $J_{mpp}$ starts to differ.
 
 ![Illustration of IV curves](Figures/IVcurves.png)
 
