@@ -1,24 +1,44 @@
 # Current matching in two-terminal solar cells
 Multi-junction devices are a promising route of further increasing the conversion efficiency of solar cells, and thereby reducing the levelized cost of electricity for photovoltaic systems.
-These so-called tandem devices come in three different architectures; two-terminal, three-terminal, and four-terminal.
-Each architecture comes with its own advantages and disadvantages[1], but at the moment of writing (and to the best of the author's knowledge), two-terminal are the most promising, primarily due to demonstrated efficiencies and their similarity with conventional single-junction solar cells in both fabrication and module integration.
+These so-called tandem devices come in three different architectures: two-terminal, three-terminal, and four-terminal.
+Each architecture comes with its own advantages and disadvantages[1].
+However, at the moment of writing (and to the best of my knowledge), two-terminal appear to be most promising.
+This is largely due to their demonstrated record efficiencies and their similarity to conventional single-junction solar cells in both fabrication processes and module integration.
 
-Two-terminal tandems, however, come with one big design constraint: current matching.
-As the subcells are connected in series, the same current needs to flow in the top and bottom cell at all times.
-This means that the tandem cell should be designed in such a way that the performance is maximum when both cells operate at the same current.
-This design requirement is often interpreted as the requirement that both cells should have the same current absorption.
+Two-terminal tandems, however, come with one major design constraint: current matching.
+Because the subcells are connected in series, the same current needs to flow in the top and bottom cell at all times.
+This means that the tandem cell should be designed in such a way that the performance is maximized when both cells operate at the same current.
+This design requirement is often interpreted as the requirement that both cells should have generate the same photocurrent.
 Various optical studies focus on the absorbed current in both subcells and aim to maximize the lowest value of absorbed current.
-And although this is a good general approach, it is important to realize that matching current absorptions is only an approximation of the actual design requirement: Matching the maximum power point current of both cells.
+Although this is a good general approach, it is important to realize that matching current absorptions is only an approximation of the actual design requirement: Matching the maximum power point current of both cells.
 
-When both subcells have a sufficiently large fill factor (FF), the maximum power point current ($J_{mpp}$) is approximately the same as the photogenerated current ($J_{ph}$), and therefore, matching $J_{ph}$ is sufficient.
-However, when the FF of one subcell is low, this does not hold anymore.
-As shown in the figure below, when the shunt resistanace ($R_{shunt}$) decreases, the two subcells remain a similar value of $J_{ph}$ (as it is similar to the short-circuit current), but the $J_{mpp}$ starts to differ.
+When both subcells have sufficiently large fill factors (FF, all definitions are provided below), the maximum power point current ($J_{mpp}$) is approximately equal to the photogenerated current ($J_{ph}$). In this case, matching $J_{ph}$ is sufficient to achieve current matching. However, this approximation breaks down when the fill factor of one of the subcells is significantly reduced.
+
+The figure below shows the (sub-) IV curves of the tandem cell with various shunt resistances ($R_{shunt}$) in the top cell. 
+In each plot, the maximum power point of both the individual subcells and the complete tandem device is indicated by dashed lines.
+For large values of $R_{shunt}$, the subcells have similar fill factors, and the device is effectively current matched when the photogenerated currents are equal. As $R_{shunt}$ decreases, however, the fill factor of the affected subcell deteriorates, causing its $J_{mpp}$ to decrease as well. 
+Although the two subcells may still generate nearly identical photogenerated currents, the device is no longer truly current matched.
+This becomes evident from the large difference between the tandem maximum power point current and the maximum power point currents of the individual subcells.
 
 ![Illustration of IV curves](Figures/IVcurves.png)
 
+Recognizing that the design objective should be to match $J_{mpp}$ rather than $J_{ph}$ can lead to improved tandem-cell designs.
+The figure below shows the effect of the top-cell bandgap energy on the current densities and output power, again for different values of $R_{shunt}$ in the top cell.
+The red curve shows the output power of the tandem cell, and the vertical red line indicates the $P_{mpp}$.
+In the top figures, the blue lines show the $J_{ph}$ of the top and bottom cell, which the blue vertical line showing when they match.
+The bottom figures show (in red) the $J_{mpp}$ for both cells, with the blue vertical line showing an identical $J_{mpp}$.
+As can be seen, the optimum bandgap predicted by matching $J_{mpp}$ corresponds much more closely to the bandgap that maximizes the tandem output power than the optimum predicted by matching $J_{ph}$. 
+This demonstrates that $J_{mpp}$ is a more relevant metric for tandem-cell optimization, particularly when non-ideal cell properties, such as low shunt resistance, affect the subcell fill factors.
 ![Optimization of bandgap energy](Figures/EgOptimization.png)
 
-## Definitions
+The GUI in this repository can be used to recreate these figures, and explore for yourself how a tandem cell can be optimized.
+Also the role of the air mass (that influences the irradiance spectrum) can be visualized.
+Feel free to play around with the GUI, try different tandem cell and have fun!
+
+With kind regards,
+Youri Blom
+
+## IV curve definitions
 * $J$: The current density of the solar cell (this can take arbitrary values).
 * $V(J)$: The voltage of a solar cell needed to produce a certain current density.
 * $J_{sc}$: The short-circuit current; the current at which the voltage is 0.
